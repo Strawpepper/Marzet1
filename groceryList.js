@@ -3,17 +3,19 @@ let groceryList = [];
 function addItem(item) {
     let addItem = document.getElementById(item).value;
     groceryList.unshift(addItem);
+
+    displayItems();
 };
 
-function displayItems(id) {
-    let list = document.getElementById(id);
-    let ul = document.createElement("ul");
+function displayItems() {
+    let list = document.getElementById("list");
     let li = document.createElement("li");
+    let itemInList;
 
     for (const item of groceryList) {
-        li.innerText = item;
-        list.appendChild(ul);
-        list.appendChild(li);
-
+        itemInList = document.createTextNode(item);
+        li.appendChild(itemInList);
     }
+
+    list.appendChild(li);
 }
