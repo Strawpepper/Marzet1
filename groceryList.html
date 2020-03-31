@@ -7,6 +7,10 @@
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
         <link rel="stylesheet" href="groceryList.css" />
         <!-- Bootstrap CSS -->
         <link
@@ -20,22 +24,31 @@
     </head>
     <body>
         <h1 class="mainHeader">Grocery List</h1>
-
-        <form>
-            <div class="form-group">
-                <label for="addGrocery">Add item</label>
-                <input type="text" class="form-control" id="addGroceryItem" />
-                <button
-                    type="button"
-                    class="btn btn-primary"
-                    onclick="handleItems('addGroceryItem')"
-                >
-                    Add Item
-                </button>
+        <div class="container">
+            <div class="input-group mb-3">
+                <input
+                    type="text"
+                    class="form-control"
+                    id="addGroceryItem"
+                    placeholder="Add Item..."
+                    aria-label="Add Item"
+                    aria-describedby="button-addon2"
+                />
+                <div class="input-group-append">
+                    <button
+                        class="btn btn-outline-success"
+                        type="button"
+                        id="button-addon2"
+                        onclick="handleGroceryList('addGroceryItem')"
+                    >
+                        Add Item
+                    </button>
+                </div>
             </div>
-        </form>
-        <div>
-            <ul id="list"></ul>
+            
+            <div class="listOfAllItems">
+                <ul id="list"></ul>
+            </div>
         </div>
 
         <script src="groceryList.js"></script>
