@@ -2,13 +2,13 @@ let groceryList = [];
 
 function handleItems(item) {
     let addItem = document.getElementById(item).value;
-    let list = document.getElementById("list");
-    let li = document.createElement("li");
-    let itemInList = document.createTextNode(addItem);
-    let deleteButton = document.createElement("button");
-    let deleteText = document.createTextNode("Delete Item");
-    let editButton = document.createElement("button");
-    let editText = document.createTextNode("Edit Item");
+    list = document.getElementById("list");
+    li = document.createElement("li");
+    itemInList = document.createTextNode(addItem);
+    deleteButton = document.createElement("button");
+    deleteText = document.createTextNode("Delete Item");
+    editButton = document.createElement("button");
+    editText = document.createTextNode("Edit Item");
 
     editButton.appendChild(editText);
     deleteButton.appendChild(deleteText);
@@ -22,6 +22,11 @@ function handleItems(item) {
     };
 
     editButton.onclick = function () {
-
+        let edit = prompt("Edit item");
+        li.innerText = edit;
+        li.appendChild(editButton);
+        li.appendChild(deleteButton);
     };
+
+
 };
