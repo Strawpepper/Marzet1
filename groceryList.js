@@ -99,7 +99,6 @@ function handleList(itemID, listID, doneListID) {
 
     checkbox.onclick = function () {
         let doneItem = li;
-        let checkbox = document.getElementById("checkboxID");
 
         if (checkbox.checked) {
             doneItem.className = "doneItems";
@@ -112,13 +111,13 @@ function handleList(itemID, listID, doneListID) {
     };
 };
 
-function onClick() {
+function saveToPDF() {
     var pdf = new jsPDF('p', 'pt', 'letter');
     pdf.canvas.height = 72 * 11;
     pdf.canvas.width = 72 * 8.5;
     pdf.fromHTML(document.body);
-    pdf.save('test.pdf');
-}
+    pdf.save('GroceryListAndToDo.pdf');
+};
 
 var element = document.getElementById("clickbind");
-element.addEventListener("click", onClick);
+element.addEventListener("click", saveToPDF);

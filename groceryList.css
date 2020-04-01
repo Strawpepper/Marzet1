@@ -92,3 +92,8 @@ li {
         right: -5px;
     }
 }
+
+#clickbind {
+    float: right;
+    padding: 10px;
+}
