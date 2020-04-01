@@ -23,8 +23,13 @@
         <title>Grocery List</title>
     </head>
     <body>
-        <h1 class="mainHeader">Grocery List</h1>
+        <h1 class="mainHeader">
+            Grocery List
+            <i class="fa fa-shopping-basket"></i>
+        </h1>
         <div class="container">
+            <h4>Add Item</h4>
+            <hr />
             <div class="input-group mb-3">
                 <input
                     type="text"
@@ -45,9 +50,19 @@
                     </button>
                 </div>
             </div>
-            
+
+            <br />
+            <h5>Grocery List</h5>
+            <hr />
             <div class="listOfAllItems">
                 <ul id="list"></ul>
+            </div>
+            <br />
+
+            <h5>Done</h5>
+            <hr />
+            <div class="shopped">
+                <ul id="shoppedItems"></ul>
             </div>
         </div>
 
