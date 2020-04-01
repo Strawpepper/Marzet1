@@ -4,10 +4,17 @@
     margin: 10px;
 }
 
+#mainContainer {
+    border: solid;
+    margin: 30px;
+    border-radius: 20px;
+}
+
 .mainHeader {
-    background: #02e8be;
+    text-align: center;
     width: 100%;
     padding: 20px;
+    text-decoration: underline;
 }
 
 .checked {
@@ -16,7 +23,11 @@
 
 .list-style {
     list-style: none;
-    margin-right: 50px;
+    width: 100%;
+}
+
+ul {
+    padding: 0;
 }
 
 button {
@@ -41,6 +52,10 @@ button:hover {
 .shoppedItems label {
     text-decoration: line-through;
     color: #888;
+}
+
+.shoppedItems {
+    list-style: none;
 }
 
 .checkbox {

@@ -1,6 +1,6 @@
-function handleGroceryList(item) {
-    let addItem = document.getElementById(item).value;
-    let list = document.getElementById("list");
+function handleGroceryList(itemID, listID) {
+    let addItem = document.getElementById(itemID).value;
+    let list = document.getElementById(listID);
 
     //Creating elements
 
@@ -22,6 +22,7 @@ function handleGroceryList(item) {
     star.className = "fa fa-star itemButtons";
     checkbox.type = "checkbox";
     checkbox.className = "checkbox";
+    checkbox.id = "cb";
     editButton.className = "fa fa-pencil itemButtons";
     deleteButton.className = "fa fa-times itemButtons";
 
@@ -37,6 +38,7 @@ function handleGroceryList(item) {
         alert("Please enter an item");
     else
         list.appendChild(li);
+
 
     deleteButton.onclick = function () {
         li.remove();
@@ -81,7 +83,6 @@ function handleGroceryList(item) {
     let checkedOrUnchecked = ["checked", "unchecked"];
 
     star.onclick = function () {
-
         if (checkedOrUnchecked[0] === "checked")
             star.className = "fa fa-star checked itemButtons";
         else
@@ -91,22 +92,25 @@ function handleGroceryList(item) {
         checkedOrUnchecked.push(changeState);
     };
 
-    let checkboxCheck = ["checked", "unchecked"];
 
     checkbox.onclick = function () {
         let shoppedItem = li;
         let listOfItemsShopped = document.getElementById("shoppedItems");
+        let checkbox = document.getElementById("cb");
 
-        if (checkboxCheck[0] = "checked") {
+        if (checkbox.checked) {
             shoppedItem.className = "shoppedItems";
             listOfItemsShopped.appendChild(shoppedItem);
         }
         else {
-            shoppedItem.className = "";
+            shoppedItem.className = "list-style";
             list.appendChild(shoppedItem);
         }
-
-        let changeState = checkedOrUnchecked.shift();
-        checkedOrUnchecked.push(changeState);
     };
 };
+
+function print(id) {
+    var objFra = document.getElementById(id);
+    objFra.contentWindow.focus();
+    objFra.contentWindow.print();
+}

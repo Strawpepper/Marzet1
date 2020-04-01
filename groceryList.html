@@ -23,46 +23,95 @@
         <title>Grocery List</title>
     </head>
     <body>
-        <h1 class="mainHeader">
-            Grocery List
-            <i class="fa fa-shopping-basket"></i>
-        </h1>
-        <div class="container">
-            <h4>Add Item</h4>
-            <hr />
-            <div class="input-group mb-3">
-                <input
-                    type="text"
-                    class="form-control"
-                    id="addGroceryItem"
-                    placeholder="Add Item..."
-                    aria-label="Add Item"
-                    aria-describedby="button-addon2"
-                />
-                <div class="input-group-append">
-                    <button
-                        class="btn btn-outline-success"
-                        type="button"
-                        id="button-addon2"
-                        onclick="handleGroceryList('addGroceryItem')"
-                    >
-                        Add Item
-                    </button>
+        <div class="containter" id="mainContainer">
+            <h1 class="mainHeader">
+                Grocery List
+                <i class="fa fa-shopping-basket"></i>
+            </h1>
+            <div class="container">
+                <h4>Add Item</h4>
+                <hr />
+                <div class="input-group mb-3">
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="addGroceryItem"
+                        placeholder="Add Item..."
+                        aria-label="Add Item"
+                        aria-describedby="button-addon2"
+                    />
+                    <div class="input-group-append">
+                        <button
+                            class="btn btn-outline-success"
+                            type="button"
+                            id="button-addon2"
+                            onclick="handleGroceryList('addGroceryItem', 'list')"
+                        >
+                            Add Item
+                        </button>
+                    </div>
+                </div>
+                <div class="container" id="">
+                    <br />
+                    <h5 class="headers">Grocery List</h5>
+                    <hr />
+                    <div class="listOfAllItems">
+                        <ul id="list"></ul>
+                    </div>
+                    <br />
+
+                    <h5 class="headers">Done</h5>
+                    <hr />
+                    <div class="shopped">
+                        <ul id="shoppedItems"></ul>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <br />
-            <h5>Grocery List</h5>
-            <hr />
-            <div class="listOfAllItems">
-                <ul id="list"></ul>
-            </div>
-            <br />
+        <div class="containter" id="mainContainer">
+            <h1 class="mainHeader">
+                To Do
+                <i class="fa fa-check"></i>
+            </h1>
+            <div class="container">
+                <h4>Add Task</h4>
+                <hr />
+                <div class="input-group mb-3">
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="addGroceryItem2"
+                        placeholder="Add Item..."
+                        aria-label="Add Item"
+                        aria-describedby="button-addon2"
+                    />
+                    <div class="input-group-append">
+                        <button
+                            class="btn btn-outline-success"
+                            type="button"
+                            id="button-addon2"
+                            onclick="handleGroceryList('addGroceryItem2', 'list2')"
+                        >
+                            Add Task
+                        </button>
+                    </div>
+                </div>
+                <div class="container" id="">
+                    <br />
+                    <h5 class="headers">Tasks</h5>
+                    <hr />
+                    <div class="listOfAllItems">
+                        <ul id="list2"></ul>
+                    </div>
+                    <br />
 
-            <h5>Done</h5>
-            <hr />
-            <div class="shopped">
-                <ul id="shoppedItems"></ul>
+                    <h5 class="headers">Completed</h5>
+                    <hr />
+                    <div class="shopped">
+                        <ul id="shoppedItems2"></ul>
+                    </div>
+                </div>
             </div>
         </div>
 
