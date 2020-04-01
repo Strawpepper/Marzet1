@@ -46,11 +46,14 @@ function handleList(itemID, listID, doneListID) {
         document.getElementById(itemID).className = "form-control";
     }
 
-    // Functions that manipulate items 
+
+    // Delete function
 
     deleteButton.onclick = function () {
         li.remove();
     };
+
+    // Edit function
 
     editButton.onclick = function () {
         // let edit = prompt("Edit item:");
@@ -69,8 +72,13 @@ function handleList(itemID, listID, doneListID) {
             li.removeChild(save);
             li.removeChild(hr);
 
-            if (editInput === "")
-                alert("Please enter an item");
+            if (editInput.value === "") {
+                editInput.className = "error";
+                label.innerText = addItem;
+                li.appendChild(checkbox);
+                li.appendChild(label);
+                editButton.onclick();
+            }
             else {
                 label.innerText = editInput.value;
                 li.appendChild(checkbox);
@@ -79,10 +87,13 @@ function handleList(itemID, listID, doneListID) {
                 li.appendChild(editButton);
                 li.appendChild(star);
                 li.appendChild(hr);
+                editInput.className = "";
 
             }
         };
     };
+
+    // Star function
 
     let checkedOrUnchecked = ["checked", "unchecked"];
 
@@ -96,6 +107,7 @@ function handleList(itemID, listID, doneListID) {
         checkedOrUnchecked.push(changeState);
     };
 
+    // Moving items to Done function 
 
     checkbox.onclick = function () {
         let doneItem = li;
@@ -108,6 +120,10 @@ function handleList(itemID, listID, doneListID) {
             doneItem.className = "list-style";
             list.appendChild(doneItem);
         }
+    };
+
+    suggestion.onclick = function () {
+        alert("Do you want Ketchup?");
     };
 };
 
