@@ -45,7 +45,7 @@
                             class="btn btn-outline-success"
                             type="button"
                             id="button-addon2"
-                            onclick="handleGroceryList('addGroceryItem', 'list')"
+                            onclick="handleList('addGroceryItem', 'list', 'shoppedItems')"
                         >
                             Add Item
                         </button>
@@ -81,7 +81,7 @@
                     <input
                         type="text"
                         class="form-control"
-                        id="addGroceryItem2"
+                        id="addTask"
                         placeholder="Add Item..."
                         aria-label="Add Item"
                         aria-describedby="button-addon2"
@@ -91,7 +91,7 @@
                             class="btn btn-outline-success"
                             type="button"
                             id="button-addon2"
-                            onclick="handleGroceryList('addGroceryItem2', 'list2')"
+                            onclick="handleList('addTask', 'toDoList', 'completedTasks')"
                         >
                             Add Task
                         </button>
@@ -102,14 +102,14 @@
                     <h5 class="headers">Tasks</h5>
                     <hr />
                     <div class="listOfAllItems">
-                        <ul id="list2"></ul>
+                        <ul id="toDoList"></ul>
                     </div>
                     <br />
 
                     <h5 class="headers">Completed</h5>
                     <hr />
                     <div class="shopped">
-                        <ul id="shoppedItems2"></ul>
+                        <ul id="completedTasks"></ul>
                     </div>
                 </div>
             </div>

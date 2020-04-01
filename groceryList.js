@@ -1,6 +1,7 @@
-function handleGroceryList(itemID, listID) {
+function handleList(itemID, listID, doneListID) {
     let addItem = document.getElementById(itemID).value;
     let list = document.getElementById(listID);
+    let doneList = document.getElementById(doneListID);
 
     //Creating elements
 
@@ -94,17 +95,16 @@ function handleGroceryList(itemID, listID) {
 
 
     checkbox.onclick = function () {
-        let shoppedItem = li;
-        let listOfItemsShopped = document.getElementById("shoppedItems");
+        let doneItem = li;
         let checkbox = document.getElementById("cb");
 
         if (checkbox.checked) {
-            shoppedItem.className = "shoppedItems";
-            listOfItemsShopped.appendChild(shoppedItem);
+            doneItem.className = "doneItems";
+            doneList.appendChild(doneItem);
         }
         else {
-            shoppedItem.className = "list-style";
-            list.appendChild(shoppedItem);
+            doneItem.className = "list-style";
+            list.appendChild(doneItem);
         }
     };
 };
