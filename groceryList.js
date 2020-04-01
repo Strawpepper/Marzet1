@@ -46,7 +46,6 @@ function handleList(itemID, listID, doneListID) {
         document.getElementById(itemID).className = "form-control";
     }
 
-
     // Delete function
 
     deleteButton.onclick = function () {
@@ -65,6 +64,7 @@ function handleList(itemID, listID, doneListID) {
         li.appendChild(editInput);
         li.appendChild(save);
         li.appendChild(hr);
+
         editInput.value = label.innerText;
 
         save.onclick = function () {
@@ -83,12 +83,8 @@ function handleList(itemID, listID, doneListID) {
                 label.innerText = editInput.value;
                 li.appendChild(checkbox);
                 li.appendChild(label);
-                li.appendChild(deleteButton);
-                li.appendChild(editButton);
-                li.appendChild(star);
                 li.appendChild(hr);
                 editInput.className = "";
-
             }
         };
     };
@@ -128,12 +124,12 @@ function handleList(itemID, listID, doneListID) {
 };
 
 function saveToPDF() {
-    var pdf = new jsPDF('p', 'pt', 'letter');
+    let pdf = new jsPDF('p', 'pt', 'letter');
     pdf.canvas.height = 72 * 11;
     pdf.canvas.width = 72 * 8.5;
     pdf.fromHTML(document.body);
-    pdf.save('GroceryListAndToDo.pdf');
+    pdf.save('GroceryAndToDoList.pdf');
 };
 
-var element = document.getElementById("clickbind");
+let element = document.getElementById("clickbind");
 element.addEventListener("click", saveToPDF);

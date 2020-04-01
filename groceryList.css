@@ -1,13 +1,18 @@
-.container {
-    display: block;
-    width: 400px;
-    margin: 10px;
-}
-
 #mainContainer {
     border: solid;
     margin: 30px;
     border-radius: 20px;
+}
+
+#clickbind {
+    float: right;
+    padding: 10px;
+}
+
+.container {
+    display: block;
+    width: 400px;
+    margin: 10px;
 }
 
 .mainHeader {
@@ -24,23 +29,6 @@
 .list-style {
     list-style: none;
     width: 100%;
-}
-
-ul {
-    padding: 0;
-}
-
-button {
-    background: none;
-    border: 0px;
-    color: #888;
-    font-size: 15px;
-    margin: 10px 0 0;
-    font-family: Lato, sans-serif;
-    cursor: pointer;
-}
-button:hover {
-    color: #333;
 }
 
 .itemButtons {
@@ -62,22 +50,6 @@ button:hover {
     margin-right: 20px;
 }
 
-h1,
-h4 {
-    font-family: "Lato", sans-serif;
-    font-weight: 900;
-}
-
-h5 {
-    font-family: "Lato", sans-serif;
-    font-weight: 700;
-}
-
-li {
-    font-family: "Roboto", sans-serif;
-    font-weight: 300;
-}
-
 .error {
     position: relative;
     animation: shake 0.1s linear;
@@ -93,7 +65,35 @@ li {
     }
 }
 
-#clickbind {
-    float: right;
-    padding: 10px;
+ul {
+    padding: 0;
+}
+
+button {
+    background: none;
+    border: 0px;
+    color: #888;
+    font-size: 15px;
+    margin: 10px 0 0;
+    font-family: Lato, sans-serif;
+    cursor: pointer;
+}
+button:hover {
+    color: #333;
+}
+
+h1,
+h4 {
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+}
+
+h5 {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+}
+
+li {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
 }
