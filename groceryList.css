@@ -61,3 +61,34 @@ button:hover {
 .checkbox {
     margin-right: 20px;
 }
+
+h1,
+h4 {
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+}
+
+h5 {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+}
+
+li {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+}
+
+.error {
+    position: relative;
+    animation: shake 0.1s linear;
+    animation-iteration-count: 3;
+}
+
+@keyframes shake {
+    0% {
+        left: -5px;
+    }
+    100% {
+        right: -5px;
+    }
+}

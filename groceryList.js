@@ -12,6 +12,7 @@ function handleList(itemID, listID, doneListID) {
     let star = document.createElement("span");
     let hr = document.createElement("hr");
     let checkbox = document.createElement("input");
+    let editInput = document.createElement("input");
 
     //Text
 
@@ -23,11 +24,13 @@ function handleList(itemID, listID, doneListID) {
     star.className = "fa fa-star itemButtons";
     checkbox.type = "checkbox";
     checkbox.className = "checkbox";
-    checkbox.id = "cb";
+    checkbox.id = "checkboxID";
     editButton.className = "fa fa-pencil itemButtons";
     deleteButton.className = "fa fa-times itemButtons";
+    editInput.type = "text";
 
     //Appending 
+
     li.appendChild(checkbox);
     li.appendChild(label);
     li.appendChild(deleteButton);
@@ -36,49 +39,49 @@ function handleList(itemID, listID, doneListID) {
     li.appendChild(hr);
 
     if (addItem === "")
-        alert("Please enter an item");
-    else
+        document.getElementById(itemID).className = "form-control error";
+    else {
         list.appendChild(li);
+        document.getElementById(itemID).value = "";
+        document.getElementById(itemID).className = "form-control";
+    }
 
+    // Functions that manipulate items 
 
     deleteButton.onclick = function () {
         li.remove();
     };
 
-    // editButton.onclick = function () {
-    //     var listItem = li;
-
-    //     var editInput = li.querySelector('input[type=text]');
-    //     var label = li.querySelector("label");
-    //     var containsClass = li.classList.contains("editMode");
-    //     //If class of the parent is .editmode
-    //     if (containsClass) {
-
-    //         //switch to .editmode
-    //         //label becomes the inputs value.
-    //         label.innerText = editInput.value;
-    //     } else {
-    //         editInput.value = label.innerText;
-    //     }
-
-    //     //toggle .editmode on the parent.
-    //     listItem.classList.toggle("editMode");
-    // };
-
     editButton.onclick = function () {
-        let edit = prompt("Edit item:");
+        // let edit = prompt("Edit item:");
+        let save = document.createElement("button");
+        save.innerText = "Save";
 
-        if (edit === "")
-            alert("Please enter an item");
-        else {
-            label.innerText = edit;
-            li.appendChild(checkbox);
-            li.appendChild(label);
-            li.appendChild(deleteButton);
-            li.appendChild(editButton);
-            li.appendChild(star);
-            li.appendChild(hr);
-        }
+        li.removeChild(label);
+        li.removeChild(checkbox);
+        li.appendChild(editInput);
+        li.appendChild(save);
+        li.appendChild(hr);
+        editInput.value = label.innerText;
+
+        save.onclick = function () {
+            li.removeChild(editInput);
+            li.removeChild(save);
+            li.removeChild(hr);
+
+            if (editInput === "")
+                alert("Please enter an item");
+            else {
+                label.innerText = editInput.value;
+                li.appendChild(checkbox);
+                li.appendChild(label);
+                li.appendChild(deleteButton);
+                li.appendChild(editButton);
+                li.appendChild(star);
+                li.appendChild(hr);
+
+            }
+        };
     };
 
     let checkedOrUnchecked = ["checked", "unchecked"];
@@ -96,7 +99,7 @@ function handleList(itemID, listID, doneListID) {
 
     checkbox.onclick = function () {
         let doneItem = li;
-        let checkbox = document.getElementById("cb");
+        let checkbox = document.getElementById("checkboxID");
 
         if (checkbox.checked) {
             doneItem.className = "doneItems";
@@ -109,8 +112,13 @@ function handleList(itemID, listID, doneListID) {
     };
 };
 
-function print(id) {
-    var objFra = document.getElementById(id);
-    objFra.contentWindow.focus();
-    objFra.contentWindow.print();
+function onClick() {
+    var pdf = new jsPDF('p', 'pt', 'letter');
+    pdf.canvas.height = 72 * 11;
+    pdf.canvas.width = 72 * 8.5;
+    pdf.fromHTML(document.body);
+    pdf.save('test.pdf');
 }
+
+var element = document.getElementById("clickbind");
+element.addEventListener("click", onClick);
